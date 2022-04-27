@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 
-class Movie extends Component {
+class CardMovie extends Component {
   state = {};
   render() {
+    const { movieObj } = this.props;
     return (
       <div
         className="container-fluid d-flex flex-row min-vh-100 justify-content-center row"
         id="container"
       >
-        {this.props.movieObj.map((c) => (
+        {movieObj.map((c) => (
           <div key={c.id} className="card" style={{ width: 19 + "rem" }}>
             <img
               src={"https://image.tmdb.org/t/p/w500" + c.poster_path}
@@ -26,4 +27,4 @@ class Movie extends Component {
   }
 }
 
-export default Movie;
+export default CardMovie;
