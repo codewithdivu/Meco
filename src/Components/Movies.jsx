@@ -24,7 +24,7 @@ class Movies extends Component {
       <div className="container">
         <CardSlider movieObj={this.state.result} />
         {sliderItems?.map((movieTypeObj) => (
-          <InfiniteSlider movieTypeObj={movieTypeObj} />
+          <InfiniteSlider key={movieTypeObj.id} movieTypeObj={movieTypeObj} />
         ))}
       </div>
     );

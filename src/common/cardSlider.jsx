@@ -18,7 +18,7 @@ class CardSlider extends Component {
     return (
       <Slider {...settings}>
         {movieObj.map((movie) => (
-          <div style={{ backgroundColor: "red", width: "100%" }}>
+          <div key={movie.id} style={{ backgroundColor: "red", width: "100%" }}>
             <img
               src={"https://image.tmdb.org/t/p/original" + movie.backdrop_path}
               className="m-auto"

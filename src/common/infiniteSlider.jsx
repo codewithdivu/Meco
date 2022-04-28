@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "../css/infiniteSlider.css";
 import { fetchMovies } from "../services/movieService";
+import { Link } from "react-router-dom";
 
 class InfiniteSlider extends Component {
   state = {
@@ -59,7 +60,7 @@ class InfiniteSlider extends Component {
     const { result } = this.state;
     return (
       <div className="p-4">
-        <h3>{this.props.movieTypeObj?.label}</h3>
+        <Link to={this.props.movieTypeObj.path}>{this.props.movieTypeObj?.label}</Link>
         <Slider {...settings}>
           {result?.map((movie) => (
             <div key={movie.id} className="card" style={{ width: 19 + "rem" }}>

@@ -1,5 +1,9 @@
 export const HOME = '/';
 export const MOVIES = '/movies';
+export const POPULAR_MOVIES = '/movies/popular';
+export const UPCOMING_MOVIES = '/movies/upcoming';
+export const NOW_PLAYING_MOVIES = '/movies/nowplaying';
+export const TOP_RATED_MOVIES = '/movies/toprated';
 export const TVSHOWS = '/tvshows';
 export const WEBSERIES = '/webseries';
 export const NOTFOUND = '*';
