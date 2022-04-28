@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import CardMovie from "../common/cardMovie";
 import CardSlider from "../common/cardSlider";
+import InfiniteSlider from "../common/infiniteSlider";
+import { sliderItems } from "../constants/metadata";
 import { fetchMovies } from "../services/movieService";
 
 class Movies extends Component {
@@ -10,7 +11,6 @@ class Movies extends Component {
 
   async fetchData() {
     const response = await fetchMovies('popular');
-    // console.log(response);
     this.setState({ result: response });
   }
 
@@ -18,11 +18,14 @@ class Movies extends Component {
     this.fetchData();
   }
 
+
   render() {
     return (
-      <div>
+      <div className="container">
         <CardSlider movieObj={this.state.result} />
-        <CardMovie movieObj={this.state.result} />
+        {sliderItems?.map((movieTypeObj) => (
+          <InfiniteSlider movieTypeObj={movieTypeObj} />
+        ))}
       </div>
     );
   }
