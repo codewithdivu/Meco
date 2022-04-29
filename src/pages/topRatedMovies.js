@@ -22,7 +22,7 @@ class TopRatedMovies extends Component {
 
     async fetchData(currentPage) {
         // console.log('currentPage', currentPage)
-        const response = await fetchMovies('top_rated', currentPage);
+        const response = await fetchMovies('top_rated','movie',currentPage);
         // console.log('response', response)
         this.setState({ ...this.state, topRatedResult: response });
     }

@@ -10,7 +10,7 @@ class Movies extends Component {
   };
 
   async fetchData() {
-    const response = await fetchMovies('popular');
+    const response = await fetchMovies('popular','movie');
     this.setState({ result: response });
   }
 

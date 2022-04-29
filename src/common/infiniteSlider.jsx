@@ -8,13 +8,13 @@ class InfiniteSlider extends Component {
     result: [],
   };
 
-  async fetchData(keyword) {
-    const response = await fetchMovies(keyword);
+  async fetchData(keyword,name) {
+    const response = await fetchMovies(keyword,name);
     this.setState({ result: response });
   }
 
   componentDidMount() {
-    this.fetchData(this.props.movieTypeObj?.movieType);
+    this.fetchData(this.props.movieTypeObj?.movieType,this.props.movieTypeObj?.type);
   }
 
   render() {

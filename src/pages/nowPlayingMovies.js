@@ -23,7 +23,7 @@ class NowPlayingMovies extends Component {
 
     async fetchData(currentPage) {
         // console.log('currentPage', currentPage)
-        const response = await fetchMovies('now_playing', currentPage);
+        const response = await fetchMovies('now_playing', 'movie' ,currentPage);
         // console.log('response', response)
         this.setState({ ...this.state, nowPlayingResult: response });
     }

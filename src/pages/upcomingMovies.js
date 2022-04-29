@@ -21,7 +21,7 @@ class UpcomingMovies extends Component {
 
     async fetchData(currentPage) {
         // console.log('currentPage', currentPage)
-        const response = await fetchMovies('upcoming', currentPage);
+        const response = await fetchMovies('upcoming','movie',currentPage);
         // console.log('response', response)
         this.setState({ ...this.state, upcomingResult: response });
     }

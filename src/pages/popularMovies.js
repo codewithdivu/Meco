@@ -21,7 +21,7 @@ class PopularMovies extends Component {
 
     async fetchData(currentPage) {
         // console.log('currentPage', currentPage)
-        const response = await fetchMovies('popular', currentPage);
+        const response = await fetchMovies('popular','movie',currentPage);
         // console.log('response', response)
         this.setState({ ...this.state, popularResult: response });
     }

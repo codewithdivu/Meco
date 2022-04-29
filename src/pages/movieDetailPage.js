@@ -11,7 +11,7 @@ const MovieDetailPage = () => {
     const { movieId } = useParams();
     useEffect(() => {
         const fetchmovie = async () => {
-            const result = await fetchMovieDetails(movieId);
+            const result = await fetchMovieDetails(movieId,'movie');
             // console.log('result', result)
             result && setMovieDetail(result)
         }
