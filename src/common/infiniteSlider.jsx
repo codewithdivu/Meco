@@ -59,7 +59,7 @@ class InfiniteSlider extends Component {
     const { result } = this.state;
     return (
       <div className="p-4">
-        <Link to={this.props.movieTypeObj.path}>{this.props.movieTypeObj?.label}</Link>
+        <Link to={this.props.movieTypeObj.path}><h3>{this.props.movieTypeObj?.label}</h3></Link>
         <Slider {...settings}>
           {result?.map((movie) => (
             <div key={movie.id} className="card" style={{ width: 19 + "rem" }}>
