@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import "../css/infiniteSlider.css";
 import { fetchMovies } from "../services/movieService";
 import { Link } from "react-router-dom";
 

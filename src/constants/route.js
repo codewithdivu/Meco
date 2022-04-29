@@ -7,3 +7,4 @@ export const TOP_RATED_MOVIES = '/movies/toprated';
 export const TVSHOWS = '/tvshows';
 export const WEBSERIES = '/webseries';
 export const NOTFOUND = '*';
+export const MOVIE_DETAIL = ':movieId'
