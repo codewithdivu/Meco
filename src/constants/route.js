@@ -5,7 +5,6 @@ export const UPCOMING_MOVIES = '/movies/upcoming';
 export const NOW_PLAYING_MOVIES = '/movies/nowplaying';
 export const TOP_RATED_MOVIES = '/movies/toprated';
 export const TVSHOWS = '/tvshows';
-export const LATEST_TV = '/tvshows/latest';
 export const AIRING_TODAY_TV = '/tvshows/airingtoday';
 export const ON_THE_AIR_TV = '/tvshows/ontheair';
 export const POPULAR_TV = '/tvshows/popular';

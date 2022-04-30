@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Components/home';
 import Movies from './Components/Movies';
 import TvShows from './Components/tvShows';
 import WebSeries from './Components/webSeries';
-import { AIRING_TODAY_TV, HOME, LATEST_TV, MOVIES, MOVIE_DETAIL, NOTFOUND, NOW_PLAYING_MOVIES, ON_THE_AIR_TV, POPULAR_MOVIES, POPULAR_TV, TOP_RATED_MOVIES, TOP_RATED_TV, TVSHOWS, TV_DETAIL, UPCOMING_MOVIES, WEBSERIES } from './constants';
+import { AIRING_TODAY_TV, HOME, MOVIES, MOVIE_DETAIL, NOTFOUND, NOW_PLAYING_MOVIES, ON_THE_AIR_TV, POPULAR_MOVIES, POPULAR_TV, TOP_RATED_MOVIES, TOP_RATED_TV, TVSHOWS, TV_DETAIL, UPCOMING_MOVIES, WEBSERIES } from './constants';
 import AppLayout from './layout/appLayout';
 import MoviesLayout from './layout/moviesLayout';
 import TVLayout from './layout/tvLayout';
 import NotFound from './pages/404';
 import AiringTodayTV from './pages/airingTodayTV';
-import LatestTV from './pages/latestTV';
 import MovieDetailPage from './pages/movieDetailPage';
 import NowPlayingMovies from './pages/nowPlayingMovies';
 import OnTheAirTV from './pages/onTheAirTV';
@@ -41,7 +40,6 @@ function App() {
           <Route path={TVSHOWS} element={<TVLayout />}>
             <Route index element={<TvShows />} />
             <Route path={TV_DETAIL} element={<TVDetailPage />} />
-            <Route path={LATEST_TV} element={<LatestTV />} />
             <Route path={AIRING_TODAY_TV} element={<AiringTodayTV />} />
             <Route path={ON_THE_AIR_TV} element={<OnTheAirTV />} />
             <Route path={POPULAR_TV} element={<PopularTV />} />
