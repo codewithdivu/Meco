@@ -22,7 +22,7 @@ class TopRatedTV extends Component {
     }
 
     async fetchData(currentPage) {
-        this.setState({...this.state , isLoader:true})
+        this.setState({isLoader:true})
         // console.log('currentPage', currentPage)
         const response = await fetchMovies('top_rated','tv',currentPage);
         // console.log('response', response)

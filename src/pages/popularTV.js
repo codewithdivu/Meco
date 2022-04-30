@@ -22,7 +22,7 @@ class PopularTV extends Component {
     }
 
     async fetchData(currentPage) {
-        this.setState({...this.state, isLoading:true})
+        this.setState({isLoading:true})
         // console.log('currentPage', currentPage)
         const response = await fetchMovies('popular','tv',currentPage);
         // console.log('response', response)

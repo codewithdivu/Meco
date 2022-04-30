@@ -12,17 +12,17 @@ class PopularMovies extends Component {
     };
 
     handlePrevious = () => {
-        this.setState({ ...this.state, currentPage: this.state.currentPage - 1 })
-        this.fetchData(this.state.currentPage - 1)
+        this.setState({ ...this.state, currentPage: this.state.currentPage - 1 });
+        this.fetchData(this.state.currentPage - 1);
     }
     handleNext = () => {
-        this.setState({ ...this.state, currentPage: this.state.currentPage + 1 })
-        this.fetchData(this.state.currentPage + 1)
+        this.setState({ ...this.state, currentPage: this.state.currentPage + 1 });
+        this.fetchData(this.state.currentPage + 1);
 
     }
 
     async fetchData(currentPage) {
-        this.setState({ ...this.state, isLoading: true })
+        this.setState({ isLoading: true })
 
         // console.log('currentPage', currentPage)
         const response = await fetchMovies('popular','movie',currentPage);
@@ -37,6 +37,7 @@ class PopularMovies extends Component {
 
 
     render() {
+        // console.log('this.state', this.state)
         // console.log('this.state', this.state);
         const { popularResult } = this.state;
         if(this.state.isLoading) return <Loader />

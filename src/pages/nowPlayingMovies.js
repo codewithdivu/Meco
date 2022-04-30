@@ -24,7 +24,7 @@ class NowPlayingMovies extends Component {
     }
 
     async fetchData(currentPage) {
-        this.setState({ ...this.state, isLoading: true })
+        this.setState({ isLoading: true })
         // console.log('currentPage', currentPage)
         const response = await fetchMovies('now_playing', 'movie', currentPage);
         // console.log('response', response)

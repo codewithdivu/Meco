@@ -23,7 +23,7 @@ class OnTheAirTV extends Component {
     }
 
     async fetchData(currentPage) {
-        this.setState({...this.state, isLoading:true})
+        this.setState({ isLoading:true})
         // console.log('currentPage', currentPage)
         const response = await fetchMovies('on_the_air','tv',currentPage);
         // console.log('response', response)
