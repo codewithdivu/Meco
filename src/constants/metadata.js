@@ -32,13 +32,6 @@ export const sliderItems = [{
 
 export const tvMetaData = [
     {
-        id: 0,
-        movieType: 'latest',
-        label: 'Latest',
-        path: LATEST_TV
-        , type: 'tv'
-    },
-    {
         id: 1,
         movieType: 'airing_today',
         label: 'Airing Today',

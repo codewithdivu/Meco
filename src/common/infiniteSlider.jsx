@@ -8,13 +8,16 @@ class InfiniteSlider extends Component {
     result: [],
   };
 
-  async fetchData(keyword,name) {
-    const response = await fetchMovies(keyword,name);
+  async fetchData(keyword, name) {
+    const response = await fetchMovies(keyword, name);
     this.setState({ result: response });
   }
 
   componentDidMount() {
-    this.fetchData(this.props.movieTypeObj?.movieType,this.props.movieTypeObj?.type);
+    this.fetchData(
+      this.props.movieTypeObj?.movieType,
+      this.props.movieTypeObj?.type
+    );
   }
 
   render() {
@@ -59,7 +62,9 @@ class InfiniteSlider extends Component {
     const { result } = this.state;
     return (
       <div className="p-4">
-        <Link to={this.props.movieTypeObj.path}><h3>{this.props.movieTypeObj?.label}</h3></Link>
+        <Link to={this.props.movieTypeObj.path}>
+          <h3>{this.props.movieTypeObj?.label}</h3>
+        </Link>
         <Slider {...settings}>
           {result?.map((movie) => (
             <div key={movie.id} className="card" style={{ width: 19 + "rem" }}>
@@ -69,7 +74,11 @@ class InfiniteSlider extends Component {
                 alt=""
               />
               <div className="card-body">
-                <h6 className="card-title">{movie.original_title}</h6>
+                <h6 className="card-title">
+                  {this.props.movieTypeObj?.type === "movie"
+                    ? movie.original_title
+                    : movie.original_name}
+                </h6>
               </div>
             </div>
           ))}

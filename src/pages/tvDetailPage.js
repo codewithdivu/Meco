@@ -12,7 +12,7 @@ const TVDetailPage = () => {
     useEffect(() => {
         const fetchmovie = async () => {
             const result = await fetchMovieDetails(tvId,'tv');
-            // console.log('result', result)
+            console.log('result', result)
             result && setTVDetail(result)
         }
         tvId && fetchmovie()
