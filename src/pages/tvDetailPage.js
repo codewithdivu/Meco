@@ -15,7 +15,6 @@ const TVDetailPage = () => {
         const fetchmovie = async () => {
             setIsLoading(true)
             const result = await fetchMovieDetails(tvId, 'tv');
-            console.log('result', result)
             result && setTVDetail(result)
             setIsLoading(false)
         }

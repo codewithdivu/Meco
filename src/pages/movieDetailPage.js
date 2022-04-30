@@ -15,13 +15,11 @@ const MovieDetailPage = () => {
         const fetchmovie = async () => {
             setIsLoading(true)
             const result = await fetchMovieDetails(movieId, 'movie');
-            // console.log('result', result)
             result && setMovieDetail(result)
             setIsLoading(false)
         }
         movieId && fetchmovie()
     }, [movieId])
-    // console.log('movieDetail', movieDetail)
 
     if (isLoading) return <Loader />
     return (

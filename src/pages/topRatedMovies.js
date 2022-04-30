@@ -24,9 +24,7 @@ class TopRatedMovies extends Component {
 
     async fetchData(currentPage) {
         this.setState({...this.state,isLoading:true})
-        // console.log('currentPage', currentPage)
         const response = await fetchMovies('top_rated','movie',currentPage);
-        // console.log('response', response)
         this.setState({ ...this.state, topRatedResult: response, isLoading:false });
     }
 
@@ -39,7 +37,6 @@ class TopRatedMovies extends Component {
         const { topRatedResult } = this.state;
 
         if(this.state.isLoading) return <Loader />
-        console.log('topRatedResult', topRatedResult);
         return (
             <>
                 <div className='container d-flex flex-wrap w-100 justify-content-center'>

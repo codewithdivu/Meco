@@ -27,7 +27,7 @@ class InfiniteSlider extends Component {
       speed: 500,
       slidesToShow: 6,
       beforeChange: (index) => {
-        console.log(index);
+        // console.log(index);
       },
       focusOnSelect: true,
       slidesToScroll: 6,

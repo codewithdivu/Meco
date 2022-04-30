@@ -8,8 +8,8 @@ const fetchMovies = async (typeName, name, page = 1) => {
 }
 
 const fetchMovieDetails = async (movieId, name) => {
-    console.log('movieId', movieId);
-    console.log('name', name);
+    // console.log('movieId', movieId);
+    // console.log('name', name);
     const response = await fetch(`https://api.themoviedb.org/3/${name}/${movieId}?api_key=5e7853fa38844856be15b0d1afefedc3&language=en-US`);
 
     let data = await response.json();

@@ -2,7 +2,7 @@ import React from "react";
 import "../css/movieDetails.css";
 
 const MovieDetails = ({ movieData }) => {
-  console.log("movieData :>> ", movieData);
+  // console.log("movieData :>> ", movieData);
   return (
     <div
       className="container banner d-flex vw-100  p-5 vh-50"

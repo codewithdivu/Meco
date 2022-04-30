@@ -23,9 +23,7 @@ class PopularTV extends Component {
 
     async fetchData(currentPage) {
         this.setState({...this.state, isLoading:true})
-        // console.log('currentPage', currentPage)
         const response = await fetchMovies('popular','tv',currentPage);
-        // console.log('response', response)
         this.setState({ ...this.state, popularTVResult: response,isLoading:false });
     }
 
@@ -36,7 +34,6 @@ class PopularTV extends Component {
 
 
     render() {
-        // console.log('this.state', this.state);
         const { popularTVResult } = this.state;
         if(this.state.isLoading) return <Loader />
         return (

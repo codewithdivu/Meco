@@ -10,20 +10,19 @@ class Pagination extends Component {
           <li
             className={currentPage === 1 ? "page-item disabled" : "page-item"}
           >
-            <a
+            <button
               onClick={handlePrevious}
               className="page-link"
-              href="#"
               tabindex="-1"
             >
               Previous
-            </a>
+            </button>
           </li>
 
           <li className="page-item">
-            <a onClick={handleNext} className="page-link" href="#">
+            <button onClick={handleNext} className="page-link">
               Next
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

@@ -13,7 +13,6 @@ class MovieCard extends Component {
       original_name,
       first_air_date,
     } = this.props.movie;
-    // console.log('this.props', this.props);
     const redirectPath =
       dataType === "movie"
         ? MOVIES + "/" + id

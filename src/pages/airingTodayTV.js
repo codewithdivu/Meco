@@ -1,61 +1,60 @@
-import React, { Component } from 'react';
 import Loader from '../common/loader';
 import MovieCard from '../common/movieCard';
 import Pagination from '../common/pagination';
 import { fetchMovies } from '../services/movieService';
 
 
-class AiringTodayTV extends Component {
-    state = {
-        airingTodayTVResult: [],
-        currentPage: 1,
-        isLoading : false
-    };
 
-    handlePrevious = () => {
-        this.setState({ ...this.state, currentPage: this.state.currentPage - 1 })
-        this.fetchData(this.state.currentPage - 1)
-    }
-    handleNext = () => {
-        this.setState({ ...this.state, currentPage: this.state.currentPage + 1 })
-        this.fetchData(this.state.currentPage + 1)
 
-    }
+import React, { useEffect, useState } from 'react'
 
-    async fetchData(currentPage) {
-        this.setState({...this.state, isLoading:true})
-        // console.log('currentPage', currentPage)
-        const response = await fetchMovies('airing_today','tv',currentPage);
-        // console.log('response', response)
-        this.setState({ ...this.state, airingTodayTVResult: response,isLoading:false });
+const AiringTodayTV = () => {
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [airingTodayTVResult, setAiringTodayTVResult] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        fetchData(currentPage)
+
+        return () =>
+            setAiringTodayTVResult([])
+    }, [currentPage])
+
+
+
+    const handlePrevious = () => {
+        setCurrentPage(currentPage - 1)
     }
 
-    componentDidMount() {
-        this.fetchData(this.state.currentPage);
+    const handleNext = () => {
+        setCurrentPage(currentPage + 1)
     }
 
-
-    render() {
-        const { airingTodayTVResult } = this.state;
-        if(this.state.isLoading) return <Loader />
-        return (
-            <>
-                <div className='container d-flex flex-wrap w-100 justify-content-center'>
-                    {
-                        airingTodayTVResult?.map(movie => (
-                            <MovieCard movie={movie} />
-                        ))
-                    }
-                </div>
-                <Pagination
-                    handlePrevious={this.handlePrevious}
-                    handleNext={this.handleNext}
-                    currentPage={this.state.currentPage}
-                />
-            </>
-
-        );
+    const fetchData = async (currentPage) => {
+        setIsLoading(true)
+        const response = await fetchMovies('airing_today', 'tv', currentPage);
+        setAiringTodayTVResult(response)
+        setIsLoading(false)
     }
+
+    if (isLoading) return <Loader />
+    return (
+        <>
+            <div className='container d-flex flex-wrap w-100 justify-content-center'>
+                {
+                    airingTodayTVResult?.map(movie => (
+                        <MovieCard movie={movie} />
+                    ))
+                }
+            </div>
+            <Pagination
+                handlePrevious={handlePrevious}
+                handleNext={handleNext}
+                currentPage={currentPage}
+            />
+        </>
+    )
 }
 
 export default AiringTodayTV;
