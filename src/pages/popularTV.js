@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from '../common/loader';
 import MovieCard from '../common/movieCard';
 import Pagination from '../common/pagination';
 import { fetchMovies } from '../services/movieService';
@@ -6,7 +7,8 @@ import { fetchMovies } from '../services/movieService';
 class PopularTV extends Component {
     state = {
         popularTVResult: [],
-        currentPage: 1
+        currentPage: 1,
+        isLoading : false
     };
 
     handlePrevious = () => {
@@ -20,10 +22,11 @@ class PopularTV extends Component {
     }
 
     async fetchData(currentPage) {
+        this.setState({...this.state, isLoading:true})
         // console.log('currentPage', currentPage)
         const response = await fetchMovies('popular','tv',currentPage);
         // console.log('response', response)
-        this.setState({ ...this.state, popularTVResult: response });
+        this.setState({ ...this.state, popularTVResult: response,isLoading:false });
     }
 
     componentDidMount() {
@@ -35,6 +38,7 @@ class PopularTV extends Component {
     render() {
         // console.log('this.state', this.state);
         const { popularTVResult } = this.state;
+        if(this.state.isLoading) return <Loader />
         return (
             <>
                 <div className='container d-flex flex-wrap w-100 justify-content-center'>

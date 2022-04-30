@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { HOME, MOVIES, TVSHOWS, WEBSERIES } from "../constants";
+import { NavLink } from "react-router-dom";
+import { HOME, MOVIES, TVSHOWS } from "../constants";
 
 class Navbar extends Component {
   state = {};
@@ -31,11 +31,6 @@ class Navbar extends Component {
             <li className="nav-item">
               <NavLink className="nav-link" to={TVSHOWS}>
                 TV-Shows
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to={WEBSERIES}>
-                Web-Series
               </NavLink>
             </li>
           </ul>
