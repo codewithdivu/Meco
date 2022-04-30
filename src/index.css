@@ -22,6 +22,7 @@ code {
 .navbar{
   margin-bottom: 30px;
   padding-left: 30px;
+  z-index: 2;
 }
 
 

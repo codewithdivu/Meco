@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link, NavLink} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { HOME, MOVIES, TVSHOWS, WEBSERIES } from "../constants";
 
 class Navbar extends Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg bg-transparent navbar-light overlap">
         <NavLink className="navbar-brand" to={HOME}>
           MECO
         </NavLink>

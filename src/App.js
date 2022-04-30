@@ -1,9 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './Components/home';
-import Movies from './Components/Movies';
-import TvShows from './Components/tvShows';
-import WebSeries from './Components/webSeries';
+import Home from './pages/home';
+import Movies from './pages/Movies';
+import TvShows from './pages/tvShows';
 import { AIRING_TODAY_TV, HOME, MOVIES, MOVIE_DETAIL, NOTFOUND, NOW_PLAYING_MOVIES, ON_THE_AIR_TV, POPULAR_MOVIES, POPULAR_TV, TOP_RATED_MOVIES, TOP_RATED_TV, TVSHOWS, TV_DETAIL, UPCOMING_MOVIES, WEBSERIES } from './constants';
 import AppLayout from './layout/appLayout';
 import MoviesLayout from './layout/moviesLayout';
@@ -46,7 +45,6 @@ function App() {
             <Route path={TOP_RATED_TV} element={<TopRatedTV />} />
           </Route >
 
-          <Route path={WEBSERIES} element={<WebSeries />} />
           <Route path={NOTFOUND} element={<NotFound />} />
         </Route>
       </Routes>
